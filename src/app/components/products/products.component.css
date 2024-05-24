@@ -1,0 +1,28 @@
+
+.background-image {
+    background-image: url("C:/Users/2317564/Downloads/frontend/src/assets/products-img.jpg"); /* Replace 'your-background-image.jpg' with the URL or path to your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+  }
+  
+  .custom-card {
+     background-color: #8d8383d1; 
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    
+  
+  
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image {
+    width: 100%; /* This will make the image take the full width of the card. */
+    height: 200px; /* Set a fixed height for the image. */
+    object-fit: cover; /* This will scale the image to fit its container while maintaining its aspect ratio. */
+  }
+  

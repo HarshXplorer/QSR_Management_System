@@ -1,0 +1,56 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 200px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("C:/Users/2317564/Downloads/frontend/src/assets/user-homepage.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+    .welcome {
+        text-align: center;
+        text-decoration: solid;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+        background-color: rgba(17, 159, 159, 0.438);
+        border-radius: 10px;
+        opacity: 20px;
+        animation: fadeIn 1s ease-in-out forwards;
+        font-display: 50px;
+    }
+    h1{
+        color: crimson;
+    }
+    h3{
+        color: yellow;
+    }
+     
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+ 
+
+/* .homepage-img{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("C:/Users/2317564/Downloads/frontend/src/assets/homepagePic.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+} */

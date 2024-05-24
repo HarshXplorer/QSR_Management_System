@@ -1,0 +1,85 @@
+<div class="img">
+  <section class="vh-100 gradient-custom">
+   
+  
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card" style="background-color: black ; border-radius: 1rem">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">
+                  Food Store
+                </h2>
+                <p class="text-light-80 mb-5">
+                  Please enter your login and password!
+                </p>
+  
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input
+                  type="email"
+                  id="typeEmailX"
+                  class="form-control form-control-lg"
+                  name="emailId"
+                  [(ngModel)]="user.emailId"
+                  required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  #emailId="ngModel"
+                  [ngModelOptions]="{ standalone: true }"
+                  placeholder="Enter your e-mail address"
+                  />
+                  <div *ngIf="emailId.errors && emailId.errors['pattern']" class="text-danger">
+                    Please enter a valid email.
+                  </div>
+                  </div>
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      id="typePasswordX"
+                      class="form-control form-control-lg"
+                      name="password"
+                      [(ngModel)]="user.password"
+                      required
+                      #password="ngModel"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Enter your password"
+                    />
+                    <!-- <label class="form-label" for="typePasswordX">Password</label> -->
+                    <div
+                      *ngIf="password.invalid && password.touched"
+                      class="text-danger"
+                    >
+                      Password is required
+                    </div>
+                  </div>
+                  <button
+                    data-mdb-button-init
+                    data-mdb-ripple-init
+                    class="btn btn-outline-light btn-lg px-5"
+                    type="submit"
+                    [disabled]="!loginForm.form.valid"
+                  >
+                    Login
+                  </button>
+                </form>
+  
+                <div>
+                  <p class="mb-0">
+                    Don't have an account?
+                    <a routerLink="/signUp" class="text-white-50 fw-bold"
+                      >Sign Up</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+  </section>
+  </div>
+  

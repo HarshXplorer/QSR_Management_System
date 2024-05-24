@@ -1,0 +1,278 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-4 text-uppercase">User Registration</h2>
+
+              <form [formGroup]="userForm" (ngSubmit)="newUser()">
+                <!-- Name -->
+                <div class="form-group row mb-4">
+                  <label for="name" class="col-sm-3 col-form-label text-right"
+                    >Name</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      formControlName="name"
+                      placeholder="Enter your name"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['name'].errors?.['required'] && userForm.controls['name'].touched"
+                    >
+                      Name is required.
+                    </div>
+                    <div
+                      *ngIf="userForm.controls['name'].errors?.['pattern'] && userForm.controls['name'].touched"
+                    >
+                      Name should only contain alphabets and spaces.
+                    </div>
+                  </div>
+                </div>
+                <!-- Mobile Number -->
+                <div class="form-group row mb-4">
+                  <label
+                    for="mobileNo"
+                    class="col-sm-3 col-form-label text-right"
+                    >Mobile Number</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="tel"
+                      id="mobileNo"
+                      class="form-control"
+                      formControlName="mobileNo"
+                      placeholder="Enter your mobile number"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['mobileNo'].errors?.['required'] && userForm.controls['mobileNo'].touched"
+                    >
+                      Mobile number is required.
+                    </div>
+                    <div
+                      *ngIf="userForm.controls['mobileNo'].errors?.['pattern'] && userForm.controls['mobileNo'].touched"
+                    >
+                      Mobile number should be exactly 10 digits.
+                    </div>
+                  </div>
+                </div>
+                <!-- Email -->
+                <div class="form-group row mb-4">
+                  <label
+                    for="emailId"
+                    class="col-sm-3 col-form-label text-right"
+                    >Email</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="email"
+                      id="emailId"
+                      class="form-control"
+                      formControlName="emailId"
+                      placeholder="Enter your email"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['emailId'].errors?.['required'] && userForm.controls['emailId'].touched"
+                    >
+                      Email is required.
+                    </div>
+                    <div
+                      *ngIf="userForm.controls['emailId'].errors?.['email'] && userForm.controls['emailId'].touched"
+                    >
+                      Please enter a valid email.
+                    </div>
+                  </div>
+                </div>
+                <!-- Password -->
+                <div class="form-group row mb-4">
+                  <label
+                    for="password"
+                    class="col-sm-3 col-form-label text-right"
+                    >Password</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      formControlName="password"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['password'].errors?.['required'] && userForm.controls['password'].touched"
+                    >
+                      Password is required.
+                    </div>
+                    <div
+                      *ngIf="userForm.controls['password'].errors?.['pattern'] && userForm.controls['password'].touched"
+                    >
+                      Password should contain at least one uppercase letter and
+                      one digit.
+                    </div>
+                  </div>
+                </div>
+                <!-- Address -->
+                <div class="form-group row mb-4">
+                  <label
+                    for="address"
+                    class="col-sm-3 col-form-label text-right"
+                    >Address</label
+                  >
+                  <div class="col-sm-9">
+                    <textarea
+                      id="address"
+                      class="form-control"
+                      formControlName="address"
+                      rows="3"
+                      placeholder="Enter your address"
+                      required
+                    ></textarea>
+                    <div
+                      *ngIf="userForm.controls['address'].errors?.['required'] && userForm.controls['address'].touched"
+                    >
+                      Address is required.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- City -->
+                <div class="form-group row mb-4">
+                  <label for="city" class="col-sm-3 col-form-label text-right"
+                    >City</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      id="city"
+                      class="form-control"
+                      formControlName="city"
+                      placeholder="Enter your city"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['city'].errors?.['required'] && userForm.controls['city'].touched"
+                    >
+                      City is required.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- State -->
+                <div class="form-group row mb-4">
+                  <label for="state" class="col-sm-3 col-form-label text-right"
+                    >State</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      id="state"
+                      class="form-control"
+                      formControlName="state"
+                      placeholder="Enter your state"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['state'].errors?.['required'] && userForm.controls['state'].touched"
+                    >
+                      State is required.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pin Code -->
+                <div class="form-group row mb-4">
+                  <label
+                    for="pinCode"
+                    class="col-sm-3 col-form-label text-right"
+                    >Pin Code</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="number"
+                      id="pinCode"
+                      class="form-control"
+                      formControlName="pinCode"
+                      placeholder="Enter your pin code"
+                      required
+                    />
+                    <div
+                      *ngIf="userForm.controls['pinCode'].errors?.['required'] && userForm.controls['pinCode'].touched"
+                    >
+                      Pin Code is required.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Address Type -->
+                <div class="form-group row mb-4">
+                  <label
+                    for="addressType"
+                    class="col-sm-3 col-form-label text-right"
+                    >Address Type</label
+                  >
+                  <div class="col-sm-9">
+                    <select
+                      class="form-control"
+                      id="addressType"
+                      formControlName="addressType"
+                    >
+                      <option value="home">Home</option>
+                      <option value="work">Work</option>
+                    </select>
+                    <div
+                      *ngIf="userForm.controls['addressType'].errors?.['required'] && userForm.controls['addressType'].touched"
+                    >
+                      Address Type is required.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Role -->
+                <div class="form-group row mb-4">
+                  <label for="role" class="col-sm-3 col-form-label text-right"
+                    >Role</label
+                  >
+                  <div class="col-sm-9">
+                    <select
+                      class="form-control"
+                      id="role"
+                      formControlName="role"
+                    >
+                      <option value="admin">Admin</option>
+                      <option value="user">User</option>
+                    </select>
+                    <div
+                      *ngIf="userForm.controls['role'].errors?.['required'] && userForm.controls['role'].touched"
+                    >
+                      Role is required.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                  <div class="offset-sm-3 col-sm-9 text-center">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-lg btn-block"
+                      [disabled]="!userForm.valid"
+                    >
+                      Register
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

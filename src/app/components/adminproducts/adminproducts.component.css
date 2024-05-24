@@ -1,0 +1,30 @@
+.background-image{
+    background-image: url("C:/Users/2317564/Downloads/frontend/src/assets/adminProductspage.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+} 
+
+    .card{
+    background-color: #e5e8e8a0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    /* border-radius: -10px; */
+    display: relative;
+    padding: 4px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+      }
+    
+      .btn-primaryy {
+        background-color: #7365cf; /* Change this to the color you want for the "Update Product" button */
+        border-color: #007bff; /* Change this to the color you want for the "Update Product" button border */
+      }
+      
+      .btn-dangerr {
+        background-color: #d86b66; /* Change this to the color you want for the "Delete Product" button */
+        border-color: #dc3545; /* Change this to the color you want for the "Delete Product" button border */
+      }

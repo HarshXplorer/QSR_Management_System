@@ -1,0 +1,37 @@
+ <app-header></app-header>
+<div class="background-image">
+    <div class="container mt-5">
+      <!-- <h2 class="text-center mb-4 text-light">Food Store</h2> -->
+      <mat-form-field style="margin-right: 20px;">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+      </mat-form-field>
+
+      <mat-form-field class="sort-dropdown">
+        <mat-select (selectionChange)="sortProduct($event.value)" placeholder="Sort">
+          <mat-option value="priceLowHigh">Price: Low to High</mat-option>
+          <mat-option value="priceHighLow">Price: High to Low</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let product of filteredProducts; let i = index">
+          <div class="card border-0 shadow custom-card">
+        
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text" style="font-weight: bold;"><strong>Description:</strong> {{ product.description }}</p>
+              <p class="card-text"><strong>Category:</strong> {{ product.category }}</p>
+              <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+              <p class="card-text"><strong>Stock Available:</strong> {{ product.stockAvailable }}</p>
+              <label for="quantity"><strong>Quantity :</strong></label>
+              <input type="number" id="quantity" [(ngModel)]="productQuantities[i]" min="1" max="{{ product.stockAvailable }}" class="form-control mb-2" />
+              <button class="btn btn-primary btn-block" 
+              [disabled]="!productQuantities[i] || productQuantities[i] < 1 || productQuantities[i] > product.stockAvailable" 
+              (click)="addToCart(productQuantities[i], product.id, uId)">Add to Cart</button>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+

@@ -1,0 +1,85 @@
+<!-- <app-header></app-header>
+<div class="background-image">
+    <div class="container mt-5">
+      <h2 class="text-center mb-4 text-light">Book Store</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let book of books">
+          <div class="card border-0 shadow">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <p class="card-text"><strong>Id : </strong>{{book.id}}</p>
+              <p class="card-text"><strong>Author:</strong> {{ book.authorName }}</p>
+              <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+              <p class="card-text"><strong>Year:</strong> {{ book.year }}</p>
+              <p class="card-text"><strong>Price:</strong> {{ book.price }}</p>
+              <p class="card-text"><strong>Stock Available:</strong> {{ book.stockAvailable }}</p>
+              <button class="btn btn-primary btn-block" (click)="addToCart(book.id,15)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+
+
+
+<app-adminheader></app-adminheader>
+
+<div class="background-image">
+  <div class="container mt-5">
+    <mat-form-field style="margin-right:10px;">
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+    </mat-form-field>
+
+    <mat-form-field class="sort-dropdown">
+      <mat-select (selectionChange)="sortProduct($event.value)" placeholder="Sort">
+        <mat-option value="priceLowHigh">Price: Low to High</mat-option>
+        <mat-option value="priceHighLow">Price: High to Low</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <h2 class="text-center mb-4 text-light">Food Store</h2> -->
+    
+    <div class="d-flex justify-content-end mb-3">
+      <button class="btn btn-success" (click)="goToAddProduct()">Add New Product</button>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let product of filteredProducts">
+        <div class="card border-0 shadow">
+          <div class="card">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <!-- <p class="card-text"><strong>Id : </strong>{{product.id}}</p> -->
+            <p class="card-text" style="font-weight: bold;">
+              <strong>Description:</strong> {{ product.description }}
+            </p>
+            <p class="card-text"><strong>Category:</strong> {{ product.category }}</p>
+            <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+
+            <p class="card-text">
+              <strong>Stock Available:</strong> {{ product.stockAvailable }}
+            </p>
+            
+            <div class="d-flex justify-content-between">
+              <button
+                class="btn btn-primaryy"
+                style="margin-right: 5px;"
+                (click)="goToUpdate(product.id)"
+              >
+                Update Product
+              </button>
+              <button
+                class="btn btn-dangerr"
+                style="margin-left: 5px;" 
+                (click)="deleteProduct(product.id)"
+              >
+                Delete Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

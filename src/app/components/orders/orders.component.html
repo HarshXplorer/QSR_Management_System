@@ -1,0 +1,45 @@
+
+<app-adminheader></app-adminheader>
+
+<section style="background-color: rgba(136, 136, 140, 0.806)">
+  <div class="container">
+    <div class="card">
+      <h3 class="text-center">Orders</h3>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>User Id</th>
+              <th>Order Id</th>
+              <th>Status</th>
+              <th>Total Quantity</th>
+              <th>Total Price</th>
+              <th>Order Date</th>
+              <th>Action</th> <!-- Added a header for action -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.user.id }}</td>
+              <td>{{ order.id }}</td>
+              <td>{{ order.status }}</td>
+              <td>{{ order.totalQuantity }}</td>
+              <td>{{ order.totalPrice }}</td>
+              <td>{{ order.orderDate }}</td>
+              <td>
+                <button
+                  class="btn btn-danger"
+                  routerLink="/home"
+                  (click)="cancelOrder(order.id)"
+                  [disabled]="order.status === 'Cancelled'"
+                >
+                  Cancel Order
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

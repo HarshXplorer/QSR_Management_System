@@ -1,0 +1,15 @@
+.order-img{
+    background-image: url("C:/Users/2317564/Downloads/frontend/src/assets/orders-img.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+.card{
+    background-color: rgba(110, 106, 101, 0.936);
+}
+.table{
+    background-color: rgba(177, 175, 171, 0.952);
+}

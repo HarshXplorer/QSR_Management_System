@@ -1,0 +1,70 @@
+<!-- 
+<app-header></app-header>
+
+
+<div class="container" *ngIf="carts; else emptyCart">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Cart ID</th>
+          <th scope="col">Book ID</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cart of carts">
+          <td>{{ cart.id }}</td>
+          <td>{{cart.book.id}}</td>
+          <td>{{ cart.book.title }}</td>
+          <td>{{ cart.quantity }}</td>
+          <td>{{ cart.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #emptyCart>
+    <div class="alert alert-warning" role="alert">
+      Your cart is empty.
+    </div>
+  </ng-template>
+   -->
+
+<app-header></app-header>
+
+<div class="container" *ngIf="carts; else emptyCart">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Cart ID</th>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of carts">
+                <td>{{ cart.id }}</td>
+                <td>{{ cart.product.id }}</td>
+                <td>{{ cart.product.name }}</td>
+                <td>{{ cart.quantity }}</td>
+                <td>{{ cart.price }}</td>
+                <td><button class="btn btn-danger" (click)="removeCart(cart.id)">Remove</button></td> 
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+      <button class="btn btn-success" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+    <div class="alert alert-warning" role="alert">
+        Your cart is empty.
+    </div>
+</ng-template>
+

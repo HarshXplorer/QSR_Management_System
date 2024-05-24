@@ -1,0 +1,41 @@
+.img{
+  background-image: url("C:/Users/2317564/Downloads/frontend/src/assets/loginPage.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+
+.gradient-custom {
+  background: linear-gradient(
+    to right,
+    rgba(107, 17, 203, 0),
+    rgba(37, 116, 252, 0)
+  );
+  min-height: 100vh;
+
+}
+
+/* body {
+  background-image: url('https://images.pexels.com/photos/13946943/pexels-photo-13946943.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.container .card {
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(249, 192, 192, 0.68) !important;
+  box-shadow: 0 0 15px rgba(255, 150, 0, 0.6);
+}
+.text-light{
+  color: black;
+  font-weight: bold;
+}
+.btn{
+  color: black;
+}
+
+
+
+
+
